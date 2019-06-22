@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.vy.payroll.model.Admin_details">
+		<field name="admin_id" type="int" />
+		<field name="userName" type="String" />
+		<field name="password" type="String" />
+	</model>
+	<model name="com.vy.payroll.model.AdvanceSalaryRecord">
+		<field name="request_id" type="int" />
+		<field name="eid" type="String" />
+		<field name="reason" type="String" />
+		<field name="is_checked" type="String" />
+		<field name="date" type="Date" />
+	</model>
+	<model name="com.vy.payroll.model.CtcDetail">
+		<field name="ctc" type="int" />
+		<field name="hra" type="int" />
+		<field name="ma" type="int" />
+		<field name="ca" type="int" />
+		<field name="ta" type="int" />
+		<field name="pf" type="int" />
+		<field name="sa" type="int" />
+		<field name="incomeTax" type="int" />
+		<field name="proffesionalTax" type="int" />
+		<field name="basicSalary" type="int" />
+		<field name="contributionAmt" type="int" />
+		<field name="gratuity" type="int" />
+	</model>
+	<model name="com.vy.payroll.model.Department">
+		<field name="dno" type="int" />
+		<field name="dName" type="String" />
+		<field name="eid" type="String" />
+	</model>
+	<model name="com.vy.payroll.model.Document">
+		<field name="docId" type="long" />
+		<field name="name" type="String" />
+		<field name="mimeType" type="String" />
+		<field name="document" type="Blob" />
+		<field name="eno" type="long" />
+		<field name="is_uploaded" type="int" />
+	</model>
+	<model name="com.vy.payroll.model.EmployeeDetails">
+		<field name="eno" type="long" />
+		<field name="eid" type="String" />
+		<field name="eName" type="String" />
+		<field name="email" type="String" />
+		<field name="password" type="String" />
+		<field name="gender" type="String" />
+		<field name="mobileNo" type="int" />
+		<field name="panCardNo" type="String" />
+		<field name="adharCardNo" type="long" />
+		<field name="uanNo" type="long" />
+		<field name="dob" type="Date" />
+		<field name="doj" type="Date" />
+		<field name="designation" type="String" />
+		<field name="role" type="String" />
+		<field name="address" type="String" />
+		<field name="qualificationS" type="String" />
+		<field name="image" type="Blob" />
+	</model>
+	<model name="com.vy.payroll.model.LeaveRequest">
+		<field name="request_id" type="int" />
+		<field name="eid" type="String" />
+		<field name="reason" type="String" />
+		<field name="is_checked" type="String" />
+		<field name="date" type="Date" />
+	</model>
+	<model name="com.vy.payroll.model.PayslipDetails">
+		<field name="ctcId" type="long" />
+		<field name="ctc" type="int" />
+		<field name="hra" type="int" />
+		<field name="ma" type="int" />
+		<field name="ca" type="int" />
+		<field name="ta" type="int" />
+		<field name="pf" type="int" />
+		<field name="sa" type="int" />
+		<field name="incomeTax" type="int" />
+		<field name="netSalary" type="int" />
+		<field name="month" type="int" />
+		<field name="eid" type="String" />
+		<field name="basicSalary" type="int" />
+		<field name="proffesionalTax" type="int" />
+		<field name="TaxablAmt" type="int" />
+		<field name="gratuity" type="int" />
+		<field name="grossSalary" type="int" />
+	</model>
+</model-hints>

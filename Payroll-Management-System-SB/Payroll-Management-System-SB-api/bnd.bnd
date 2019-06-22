@@ -1,0 +1,10 @@
+Bundle-Name: Payroll-Management-System-SB-api
+Bundle-SymbolicName: com.vy.payroll.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.vy.payroll.exception,\
+	com.vy.payroll.model,\
+	com.vy.payroll.service,\
+	com.vy.payroll.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Payroll-Management-System-SB-service/service.xml

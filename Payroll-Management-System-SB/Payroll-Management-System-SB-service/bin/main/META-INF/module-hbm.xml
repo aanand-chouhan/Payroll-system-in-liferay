@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.vy.payroll.model.Admin_details" />
+	<import class="com.vy.payroll.model.AdvanceSalaryRecord" />
+	<import class="com.vy.payroll.model.CtcDetail" />
+	<import class="com.vy.payroll.model.Department" />
+	<import class="com.vy.payroll.model.Document" />
+	<import class="com.vy.payroll.model.EmployeeDetails" />
+	<import class="com.vy.payroll.model.LeaveRequest" />
+	<import class="com.vy.payroll.model.PayslipDetails" />
+	<class name="com.vy.payroll.model.impl.Admin_detailsImpl" table="admin_details">
+		<id name="admin_id" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="password_" name="password" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.vy.payroll.model.impl.AdvanceSalaryRecordImpl" table="advance_salary_records">
+		<id name="request_id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="eid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="is_checked" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="date_" name="date" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.vy.payroll.model.impl.CtcDetailImpl" table="ctc_details">
+		<id name="ctc" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="hra" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ma" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ca" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ta" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="pf" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="sa" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="incomeTax" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="proffesionalTax" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="basicSalary" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="contributionAmt" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="gratuity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.vy.payroll.model.impl.DepartmentImpl" table="department">
+		<id name="dno" type="int">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" name="dName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.vy.payroll.model.impl.DocumentImpl" table="emp_documents">
+		<id name="docId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mimeType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<one-to-one access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" cascade="save-update" class="com.vy.payroll.model.DocumentDocumentBlobModel" constrained="true" name="documentBlobModel" outer-join="false" />
+		<property name="eno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="is_uploaded" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class lazy="true" name="com.vy.payroll.model.DocumentDocumentBlobModel" table="emp_documents">
+		<id column="docId" name="docId">
+			<generator class="foreign">
+				<param name="property">com.vy.payroll.model.impl.DocumentImpl</param>
+			</generator>
+		</id>
+		<property column="document" name="documentBlob" type="blob" />
+	</class>
+	<class name="com.vy.payroll.model.impl.EmployeeDetailsImpl" table="emp_details">
+		<id name="eno" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="eid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" name="eName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="password_" name="password" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mobileNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="panCardNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adharCardNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="uanNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dob" type="org.hibernate.type.TimestampType" />
+		<property name="doj" type="org.hibernate.type.TimestampType" />
+		<property name="designation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="role" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="qualificationS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<one-to-one access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" cascade="save-update" class="com.vy.payroll.model.EmployeeDetailsImageBlobModel" constrained="true" name="imageBlobModel" outer-join="false" />
+	</class>
+	<class lazy="true" name="com.vy.payroll.model.EmployeeDetailsImageBlobModel" table="emp_details">
+		<id column="eno" name="eno">
+			<generator class="foreign">
+				<param name="property">com.vy.payroll.model.impl.EmployeeDetailsImpl</param>
+			</generator>
+		</id>
+		<property column="image" name="imageBlob" type="blob" />
+	</class>
+	<class name="com.vy.payroll.model.impl.LeaveRequestImpl" table="leaverequest">
+		<id name="request_id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="eid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="is_checked" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="date_" name="date" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.vy.payroll.model.impl.PayslipDetailsImpl" table="payslip_details">
+		<id name="ctcId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="ctc" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="hra" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ma" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ca" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ta" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="pf" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="sa" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="incomeTax" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="netSalary" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="month" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="eid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="basicSalary" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="proffesionalTax" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="TaxablAmt" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="gratuity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="grossSalary" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+</hibernate-mapping>

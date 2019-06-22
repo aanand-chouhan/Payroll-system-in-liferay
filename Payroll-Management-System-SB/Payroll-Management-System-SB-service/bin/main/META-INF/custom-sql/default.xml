@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	<custom-sql>
+		<sql file="updateDocs.xml" />
+	</custom-sql> -->
+	
+<custom-sql >
+		<sql id="com.vy.payroll.service.persistence.DocumentFinder.documentUpdate">
+			<![CDATA[UPDATE emp_documents SET is_uploaded=? WHERE eno=?]]>
+		</sql>
+		
+		<sql id="getIsDocReviewed">
+			<![CDATA[SELECT * FROM emp_documents WHERE is_uploaded=1 AND eno=?]]>
+		</sql>
+		<sql id="com.vy.payroll.service.persistence.AdvanceSalaryRecordFinder.updateIsViewed">
+			<![CDATA[UPDATE advance_salary_records SET is_checked=? WHERE is_checked=?]]>
+		</sql>
+		<sql id="com.vy.payroll.service.persistence.AdvanceSalaryRecordFinder.getAdvanceSalAndLeaveReq">
+			<![CDATA[SELECT * FROM leaverequest,advance_salary_records ;]]>
+		</sql>
+		
+		<sql id="com.vy.payroll.service.persistence.AdvanceSalaryRecordFinder.IsRequestViewed">
+			<![CDATA[SELECT * FROM advance_salary_records WHERE is_checked=?]]>
+		</sql>
+		
+		<sql id="com.vy.payroll.service.persistence.LeaveRequestFinder.updateIsViewed">
+			<![CDATA[UPDATE leaverequest SET is_checked=? WHERE is_checked=?]]>
+		</sql>
+		
+		<sql id="com.vy.payroll.service.persistence.LeaveRequestFinderr.IsRequestViewed">
+			<![CDATA[SELECT * FROM leaverequest WHERE is_checked=?]]>
+		</sql>
+</custom-sql>

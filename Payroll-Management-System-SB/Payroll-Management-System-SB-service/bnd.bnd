@@ -1,0 +1,5 @@
+Bundle-Name: Payroll-Management-System-SB-service
+Bundle-SymbolicName: com.vy.payroll.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true

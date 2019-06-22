@@ -1,0 +1,130 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+
+}
+#sidebar{
+	position: absolute;
+	width: 200px;
+	background: #151619;
+	transition: all 500ms linear;
+    left: -1px ;
+    top:  50px;
+    background-color: #222222;
+
+}
+#sidebar.active{
+	left: 0px;
+}
+#sidebar ul li {
+		color: rgba(230,230,230,0.9);
+		list-style: none;
+		padding: 0px 0px;
+		border-bottom: 0px solid rgba(100,100,100,0.3);
+}
+ .toggle-button{
+	position: absolute;
+	/* left: 230px;
+	top: 20px; */
+    left: 25px;
+    top: 10px;
+
+}
+.toggle-button span{
+	display: block;
+	width: 30px;
+	height: 5px;
+	background: white;
+	margin: 5px 0px;
+} 
+
+#sidebar .sidebar-header .user-pic {
+  float: left;
+  width: 60px;
+  padding: 2px;
+  border-radius: 12px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+#sidebar .sidebar-header .user-pic img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius:30px;
+}
+
+#sidebar .sidebar-header .user-info {
+  float: left;
+  color:white;
+}
+
+#sidebar .sidebar-header .user-info > span {
+  display: block;
+}
+
+#sidebar .sidebar-header .user-info .user-role {
+  font-size: 12px;
+  margin-top: -15px;
+  color:white;
+}
+
+#sidebar .sidebar-header .user-info .user-status {
+  font-size: 11px;
+  margin-top: 4px;
+  coloe:white;
+}
+
+#sidebar .sidebar-header .user-info .user-status i {
+  font-size: 8px;
+  margin-right: 4px;
+  color: #5cb85c;
+}
+
+.navbar-header a img{
+	margin-top:-18px;
+}
+@media only screen and (max-width: 768px){
+[class*="logout"] {
+    margin-left: 268px;
+}
+}
+
+/*Galaxy s5*/
+@media (min-width: 360px) and (max-width: 640px) {
+[class*="logout"] {
+    margin-left: 260px;
+}
+}
+
+/*Pixel 2*/
+@media (min-width: 411px) and (max-width: 731px) {
+[class*="logout"] {
+    margin-left: 310px;
+}
+}
+/*Pixel 2 Xl*/
+@media (min-width: 411px) and (max-width: 823px) {
+[class*="logout"] {
+    margin-left: 310px;
+}
+}
+/*iPhone 5/SE*/
+@media (min-width: 320px) and (max-width: 568px) {
+[class*="logout"] {
+    margin-left: 225px;
+}
+}
+/*iPhone 5/SE*/
+@media (min-width: 375px) and (max-width: 667px) {
+[class*="logout"] {
+    margin-left: 270px;
+}
+}
+/*iPhone 5/SE*/
+@media (min-width: 414px) and (max-width: 736px) {
+[class*="logout"] {
+    margin-left: 315px;
+}
+}

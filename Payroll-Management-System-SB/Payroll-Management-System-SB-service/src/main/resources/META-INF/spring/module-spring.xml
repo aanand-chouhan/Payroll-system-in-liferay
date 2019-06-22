@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.vy.payroll.service.impl.Admin_detailsLocalServiceImpl" id="com.vy.payroll.service.Admin_detailsLocalService" />
+	<bean class="com.vy.payroll.service.impl.Admin_detailsServiceImpl" id="com.vy.payroll.service.Admin_detailsService" />
+	<bean class="com.vy.payroll.service.persistence.impl.Admin_detailsPersistenceImpl" id="com.vy.payroll.service.persistence.Admin_detailsPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.AdvanceSalaryRecordLocalServiceImpl" id="com.vy.payroll.service.AdvanceSalaryRecordLocalService" />
+	<bean class="com.vy.payroll.service.impl.AdvanceSalaryRecordServiceImpl" id="com.vy.payroll.service.AdvanceSalaryRecordService" />
+	<bean class="com.vy.payroll.service.persistence.impl.AdvanceSalaryRecordPersistenceImpl" id="com.vy.payroll.service.persistence.AdvanceSalaryRecordPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.persistence.impl.AdvanceSalaryRecordFinderImpl" id="com.vy.payroll.service.persistence.AdvanceSalaryRecordFinder" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.CtcDetailLocalServiceImpl" id="com.vy.payroll.service.CtcDetailLocalService" />
+	<bean class="com.vy.payroll.service.impl.CtcDetailServiceImpl" id="com.vy.payroll.service.CtcDetailService" />
+	<bean class="com.vy.payroll.service.persistence.impl.CtcDetailPersistenceImpl" id="com.vy.payroll.service.persistence.CtcDetailPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.DepartmentLocalServiceImpl" id="com.vy.payroll.service.DepartmentLocalService" />
+	<bean class="com.vy.payroll.service.impl.DepartmentServiceImpl" id="com.vy.payroll.service.DepartmentService" />
+	<bean class="com.vy.payroll.service.persistence.impl.DepartmentPersistenceImpl" id="com.vy.payroll.service.persistence.DepartmentPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.DocumentLocalServiceImpl" id="com.vy.payroll.service.DocumentLocalService" />
+	<bean class="com.vy.payroll.service.impl.DocumentServiceImpl" id="com.vy.payroll.service.DocumentService" />
+	<bean class="com.vy.payroll.service.persistence.impl.DocumentPersistenceImpl" id="com.vy.payroll.service.persistence.DocumentPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.persistence.impl.DocumentFinderImpl" id="com.vy.payroll.service.persistence.DocumentFinder" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.EmployeeDetailsLocalServiceImpl" id="com.vy.payroll.service.EmployeeDetailsLocalService" />
+	<bean class="com.vy.payroll.service.impl.EmployeeDetailsServiceImpl" id="com.vy.payroll.service.EmployeeDetailsService" />
+	<bean class="com.vy.payroll.service.persistence.impl.EmployeeDetailsPersistenceImpl" id="com.vy.payroll.service.persistence.EmployeeDetailsPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.LeaveRequestLocalServiceImpl" id="com.vy.payroll.service.LeaveRequestLocalService" />
+	<bean class="com.vy.payroll.service.impl.LeaveRequestServiceImpl" id="com.vy.payroll.service.LeaveRequestService" />
+	<bean class="com.vy.payroll.service.persistence.impl.LeaveRequestPersistenceImpl" id="com.vy.payroll.service.persistence.LeaveRequestPersistence" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.persistence.impl.LeaveRequestFinderImpl" id="com.vy.payroll.service.persistence.LeaveRequestFinder" parent="basePersistence" />
+	<bean class="com.vy.payroll.service.impl.PayslipDetailsLocalServiceImpl" id="com.vy.payroll.service.PayslipDetailsLocalService" />
+	<bean class="com.vy.payroll.service.impl.PayslipDetailsServiceImpl" id="com.vy.payroll.service.PayslipDetailsService" />
+	<bean class="com.vy.payroll.service.persistence.impl.PayslipDetailsPersistenceImpl" id="com.vy.payroll.service.persistence.PayslipDetailsPersistence" parent="basePersistence" />
+</beans>
